@@ -3,10 +3,11 @@ package Homework_1_2;
 public class Worker implements OnTaskDoneListener{
 
     private final OnTaskDoneListener callback;
-    private final OnTaskErrorListener errorCallback = () -> System.out.println("Ошибка!");
+    private final OnTaskErrorListener errorCallback;
 
-    public Worker(OnTaskDoneListener callback) {
+    public Worker(OnTaskDoneListener callback, OnTaskErrorListener errorCallback) {
         this.callback = callback;
+        this.errorCallback = errorCallback;
     }
 
     @Override
