@@ -14,11 +14,13 @@ public class Worker implements OnTaskDoneListener{
     }
 
     public void start() {
-        for (int i = 0; i < 10; i++) {
-            callback.onDone("Задача " + (i + 1) + " выполненна");
-            if (i == 2){
+        for (int i = 0; i < 100; i++) {
+            if (i == 32){
                 errorCallback.onError();
+                continue;
             }
+            callback.onDone("Задача " + (i + 1) + " выполненна");
+
         }
     }
 }
